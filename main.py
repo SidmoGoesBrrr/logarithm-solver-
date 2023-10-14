@@ -31,13 +31,13 @@ if st.button("Calculate"):
     st.text(first_digit)
     st.text(rest_of_digits)
     if operation == 'Multiplication':
-    result1 = log_num1 * log_num2
-    st.write(f"2) AL({log_num1:.3f} {'*'} {log_num2:.3f})")
-    st.write(f"3) AL({result1:.3f})")
-elif operation == 'Division':
-    result1 = log_num1 / log_num2
-    st.write(f"2) AL({log_num1:.3f} {'/'} {log_num2:.3f})")
-    st.write(f"3) AL({result1:.3f})")
+        result1 = log_num1 * log_num2
+        st.write(f"2) AL({log_num1:.3f} {'*'} {log_num2:.3f})")
+        st.write(f"3) AL({result1:.3f})")
+    elif operation == 'Division':
+        result1 = log_num1 / log_num2
+        st.write(f"2) AL({log_num1:.3f} {'/'} {log_num2:.3f})")
+        st.write(f"3) AL({result1:.3f})")
     st.write(f"4)") 
     
     # Calculate the antilog of the result
