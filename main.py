@@ -38,6 +38,6 @@ if st.button("Calculate"):
     
     scientific_notation = lambda x: "{:.4f} x 10^{}".format(x / 10 ** int(abs(x) // 1), int(abs(x)))
     st.write(scientific_notation(186.31782))
-    st.write(scientific_notation(antilog_result.5f))
+    st.write(scientific_notation(antilog_result))
     st.write(f"5) The actual antilog of the result is: {antilog_result_sci}")
     
