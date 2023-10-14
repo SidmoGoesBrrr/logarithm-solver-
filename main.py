@@ -36,7 +36,7 @@ if st.button("Calculate"):
     # Calculate the antilog of the result in scientific notation with superscripts
     antilog_result_sci = f"{antilog_result:.5f}"
     
-    scientific_notation = lambda x: "{:.4f} x 10^{}".format(x / 10 ** int(abs(x) // 1), int(abs(x)))
+    scientific_notation = lambda x: "{:.4f} x 10^{}".format(x / 10 ** int(abs(x)), int(abs(x)))
     st.write(scientific_notation(186.31782))
     st.write("4) "+scientific_notation(antilog_result))
     st.write(f"5) The actual antilog of the result is: {antilog_result_sci}")
