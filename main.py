@@ -18,20 +18,21 @@ if st.button("Calculate"):
         result = np.log10(num1) + np.log10(num2)
         log_num1 = np.log10(num1)
         log_num2 = np.log10(num2)
+        antilog_result = 10 ** result
     elif operation == "Division":
         result = np.log10(num1) - np.log10(num2)
         log_num1 = np.log10(num1)
         log_num2 = np.log10(num2)
+        antilog_result = 10 ** (-result)
 
-    operation_str = f"AL(log({num1}) + log({num2}))"
+    operation_str = f"AL(log({num1}) {'+' if operation == 'Multiplication' else '-'} log({num2}))"
     st.subheader(f"{num1} {'x' if operation == 'Multiplication' else '%'} {num2}")
     st.write(f"1) {operation_str}")
 
     result1 = log_num1 + log_num2
-    st.write(f"2) AL({log_num1:.3f} + {log_num2:.3f})")
+    st.write(f"2) AL({log_num1:.3f} {'+' if operation == 'Multiplication' else '-'} {log_num2:.3f})")
     st.write(f"3) AL({result1:.3f})")
 
     # Calculate the antilog of the result in scientific notation with superscripts
-    antilog_result = 10 ** (result - int(result))
     antilog_result_sci = f"{antilog_result:.5f} × 10<sup>{int(np.floor(result))}</sup>"
-    st.write(f"5) The actual antilog of the result is: {antilog_result_sci}")
+    st.write(f"4) The actual antilog of the result is: {antilog_result_sci}")
