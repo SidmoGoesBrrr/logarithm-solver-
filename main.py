@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 
 st.title("Logarithmic Calculation App")
-
+st.header("Made by Siddhant cause completing physics journal is not fun")
 # Input for the first number
 num1 = st.number_input("Enter the first number (up to 3 decimal places):", format="%.3f")
 
@@ -29,10 +29,10 @@ if st.button("Calculate"):
     first_digit, rest_of_digits = str(result).split(".")
     
     st.write(f"2) AL({log_num1:.3f} {'+' if operation == 'Multiplication' else '-'} {log_num2:.3f})")
-    st.write(f"3) AL({first_digit}.{rest_of_digits[1:]} x 10^{len(rest_of_digits) - 1}")
+    st.write(f"3) AL({first_digit:.3f})")
+    st.write(f"{float(rest_of_digits) * 10 ** (len(rest_of_digits) - 1):.3f} x 10^{len(rest_of_digits) - 1}")
     
     # Calculate the antilog of the result
     antilog_result = 10 ** result
-    st.write(f"4) The actual antilog of the result is: {antilog_result:.3f}")
-    st.write(f"5) {first_digit}.{rest_of_digits[1:]} x 10^{len(rest_of_digits) - 1}")
+    st.write(f"The actual antilog of the result is: {antilog_result:.3f}")
     
