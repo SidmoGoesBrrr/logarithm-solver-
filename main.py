@@ -29,7 +29,7 @@ if st.button("Calculate"):
     first_digit, rest_of_digits = str(result).split(".")
     
     st.write(f"2) AL({log_num1:.3f} {'+' if operation == 'Multiplication' else '-'} {log_num2:.3f})")
-    st.write(f"3) AL({first_digit}.")
+    st.write(f"3) AL({first_digit})")
     st.write(f"{float(rest_of_digits) * 10 ** (len(rest_of_digits) - 1):.3f} x 10^{len(rest_of_digits) - 1}")
     
     # Calculate the antilog of the result
