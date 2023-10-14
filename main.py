@@ -31,7 +31,7 @@ if st.button("Calculate"):
     
     st.write(f"2) AL({log_num1:.3f} {'+' if operation == 'Multiplication' else '-'} {log_num2:.3f})")
     st.write(f"3) AL({first_digit:.3f})")
-    st.write(f"4) 
+    st.write(f"4)") 
     
     # Calculate the antilog of the result
     antilog_result = 10 ** result
