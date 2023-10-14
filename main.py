@@ -30,6 +30,8 @@ if st.button("Calculate"):
     result1 = log_num1 + log_num2
     st.write(f"2) AL({log_num1:.3f} + {log_num2:.3f})")
     st.write(f"3) AL({result1:.3f})")
-    antilog_result_sci = f"{result:.5f} x 10^{int(np.floor(result))}"
-    st.write(f"4) The antilog of the result is approximately: {antilog_result_sci}")
-    st.write(f"5) The actual antilog of the result is: {10 ** result:.3f}")
+
+    # Calculate the antilog of the result in scientific notation with superscripts
+    antilog_result = 10 ** (result - int(result))
+    antilog_result_sci = f"{antilog_result:.5f} × 10<sup>{int(np.floor(result))}</sup>"
+    st.write(f"5) The actual antilog of the result is: {antilog_result_sci}")
