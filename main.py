@@ -34,5 +34,5 @@ if st.button("Calculate"):
     st.write(f"3) AL({result1:.3f})")
 
     # Calculate the antilog of the result in scientific notation with superscripts
-    antilog_result_sci = f"{antilog_result:.5f} × 10\u00b{int(np.floor(result))}"
+    antilog_result_sci = f"{antilog_result:.5f} × 10^{int(np.floor(result))}"
     st.write(f"4) The actual antilog of the result is: {antilog_result_sci}")
