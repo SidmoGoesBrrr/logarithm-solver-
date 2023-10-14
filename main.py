@@ -24,8 +24,8 @@ if st.button("Calculate"):
 
     operation_str = f"AL(log({num1}) {'+' if operation == 'Multiplication' else '-'} log({num2}))"
     st.write(f"1) {operation_str}")
-    st.write(f"2) AL({log_num1:.3f} {'+' if operation == 'Multiplication' else '-'} {log_num2:.3f}")
-    st.write(f"3) AL({result:.3f}")
+    st.write(f"2) AL({log_num1:.3f} {'+' if operation == 'Multiplication' else '-'} {log_num2:.3f})")
+    st.write(f"3) AL({result:.3f})")
 
     # Calculate the antilog of the result
     antilog_result = 10 ** result
