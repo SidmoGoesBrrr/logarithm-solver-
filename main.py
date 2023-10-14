@@ -21,16 +21,17 @@ if st.button("Calculate"):
         result = np.log10(num1) - np.log10(num2)
         log_num1 = np.log10(num1)
         log_num2 = np.log10(num2)
-    print(result)
+    st.text(result)
     operation_str = f"AL(log({num1}) {'+' if operation == 'Multiplication' else '-'} log({num2})"
     st.subheader(f"{num1} {'x' if operation == 'Multiplication' else '%'} {num2}")
     st.write(f"1) {operation_str})")
     
     # Split the result into the first digit and the rest of the digits
     first_digit, rest_of_digits = str(result).split(".")
-    
+    st.text(first_digit)
+    st.text(rest_of_digits)
     st.write(f"2) AL({log_num1:.3f} {'+' if operation == 'Multiplication' else '-'} {log_num2:.3f})")
-    st.write(f"3) AL()")
+    st.write(f"3) AL({log_num1:.3f} {+ if operation == 'Multiplication' else -} {log_num2:.3f})")
     st.write(f"4)") 
     
     # Calculate the antilog of the result
