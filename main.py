@@ -23,7 +23,7 @@ if st.button("Calculate"):
         result = np.log10(num1) - np.log10(num2)
         log_num1 = np.log10(num1)
         log_num2 = np.log10(num2)
-        antilog_result = 10 ** (-result)
+        antilog_result = 10 ** (result)
 
     operation_str = f"AL(log({num1}) {'+' if operation == 'Multiplication' else '-'} log({num2}))"
     st.subheader(f"{num1} {'x' if operation == 'Multiplication' else '%'} {num2}")
