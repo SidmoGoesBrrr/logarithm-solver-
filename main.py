@@ -12,23 +12,22 @@ num2 = st.number_input("Enter the second number (up to 3 decimal places):", form
 # Dropdown to select the operation
 operation = st.selectbox("Select operation:", ["Multiplication", "Division"])
 
-# Perform the operation and calculate the logarithms
-if operation == "Multiplication":
-    result = np.log10(num1) - np.log10(num2)
-    operation_str = "AL(log({} / {}))".format(num1, num2)
-    log_num1 = np.log10(num1)
-    log_num2 = np.log10(num2)
-elif operation == "Division":
-    result = np.log10(num1) - np.log10(num2)
-    operation_str = "AL(log({} / {}))".format(num1, num2)
-    log_num1 = np.log10(num1)
-    log_num2 = np.log10(num2)
+if st.button("Calculate"):
+    if operation == "Multiplication":
+        result = np.log10(num1) + np.log10(num2)  # Changed + for multiplication
+        log_num1 = np.log10(num1)
+        log_num2 = np.log10(num2)
+    elif operation == "Division":
+        result = np.log10(num1) - np.log10(num2)  # Changed - for division
+        log_num1 = np.log10(num1)
+        log_num2 = np.log10(num2)
 
-# Display the steps
-st.markdown("1) {}".format(operation_str))
-st.markdown("2) AL({:.3f} - {:.3f})".format(log_num1, log_num2))
-st.markdown("3) AL({:.3f})".format(result))
+    operation_str = f"AL(log({num1}) {'+' if operation == 'Multiplication' else '-'} log({num2}))"
+    st.write(f"1) {operation_str}")
+    st.write(f"2) AL({log_num1:.3f} {'+' if operation == 'Multiplication' else '-'} {log_num2:.3f}")
+    st.write(f"3) AL({result:.3f}")
 
-# Calculate the antilog of the result
-antilog_result = 10 ** result
-st.markdown("4) The actual antilog of the result is: {:.3f}".format(antilog_result))
+    # Calculate the antilog of the result
+    antilog_result = 10 ** result
+    st.write(f"4) The actual antilog of the result is: {antilog_result:.3f}")
+    
