@@ -5,10 +5,10 @@ st.title("Logarithmic Calculation App")
 st.header("Made by Siddhant because completing the physics journal is not fun")
 
 # Input for the first number
-num1 = st.number_input("Enter the first number (up to 3 decimal places):", format="%.4f")
+num1 = st.number_input("Enter the first number (up to 4 decimal places):", format="%.4f")
 
 # Input for the second number
-num2 = st.number_input("Enter the second number (up to 3 decimal places):", format="%.4f")
+num2 = st.number_input("Enter the second number (up to 4 decimal places):", format="%.4f")
 
 # Dropdown to select the operation
 operation = st.selectbox("Select operation:", ["Multiplication", "Division"])
