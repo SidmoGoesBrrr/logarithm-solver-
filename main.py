@@ -5,10 +5,10 @@ st.title("Logarithmic Calculation App")
 st.header("Made by Siddhant because completing the physics journal is not fun")
 
 # Input for the first number
-num1 = st.number_input("Enter the first number (up to 3 decimal places):", format="%.3f")
+num1 = st.number_input("Enter the first number (up to 3 decimal places):", format="%.4f")
 
 # Input for the second number
-num2 = st.number_input("Enter the second number (up to 3 decimal places):", format="%.3f")
+num2 = st.number_input("Enter the second number (up to 3 decimal places):", format="%.4f")
 
 # Dropdown to select the operation
 operation = st.selectbox("Select operation:", ["Multiplication", "Division"])
@@ -30,8 +30,8 @@ if st.button("Calculate"):
     st.write(f"1) {operation_str}")
 
     result1 = log_num1 + log_num2
-    st.write(f"2) AL({log_num1:.3f} {'+' if operation == 'Multiplication' else '-'} {log_num2:.3f})")
-    st.write(f"3) AL({result1:.3f})")
+    st.write(f"2) AL({log_num1:.4f} {'+' if operation == 'Multiplication' else '-'} {log_num2:.4f})")
+    st.write(f"3) AL({result1:.4f})")
 
     # Calculate the antilog of the result in scientific notation with superscripts
     antilog_result_sci = "{:.4f}".format(antilog_result)  # Updated formatting
