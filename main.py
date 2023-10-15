@@ -31,7 +31,7 @@ if st.button("Calculate"):
 
     result1 = log_num1 + log_num2
     st.write(f"2) AL({log_num1:.4f} {'+' if operation == 'Multiplication' else '-'} {log_num2:.4f})")
-    st.write(f"3) AL({(np.log10(num1) - np.log10(num2)).4f})")
+    st.write(f"3) AL({(np.log10(num1) - np.log10(num2)):.4f})")
 
     # Calculate the antilog of the result in scientific notation with superscripts
     antilog_result_sci = "{:.4f}".format(antilog_result)  # Updated formatting
