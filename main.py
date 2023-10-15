@@ -23,7 +23,7 @@ if st.button("Calculate"):
         result = np.log10(num1) - np.log10(num2)
         log_num1 = np.log10(num1)
         log_num2 = np.log10(num2)
-        antilog_result = 1 / (10 ** abs(result))
+        antilog_result = 10 ** result  # Corrected antilog calculation
 
     operation_str = f"AL(log({num1}) {'+' if operation == 'Multiplication' else '-'} log({num2}))"
     st.subheader(f"{num1} {'x' if operation == 'Multiplication' else '%'} {num2}")
@@ -34,10 +34,8 @@ if st.button("Calculate"):
     st.write(f"3) AL({result1:.3f})")
 
     # Calculate the antilog of the result in scientific notation with superscripts
-    antilog_result_sci = f"{antilog_result:.5f}"
+    antilog_result_sci = "{:.4f}".format(antilog_result)  # Updated formatting
     exponent = int(np.log10(antilog_result))
     antilog_result_custom_sci = "{:.4f} x 10^{}".format(antilog_result / 10 ** exponent, exponent)
     st.write("4) " + antilog_result_custom_sci)
-    st.write(f"5) The actual antilog of the result is: {antilog_result:.2f}")
-    
-    
+    st.write(f"5) The actual antilog of the result is: {antilog_result:.5f}")  # Adjusted precision
